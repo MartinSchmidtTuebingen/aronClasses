@@ -1,5 +1,7 @@
 <?php
 
+namespace Aron\Core;
+
 class aView
 {
 

@@ -1,5 +1,9 @@
 <?php
 
+namespace Aron\Core;
+
+use Exception;
+
 class aControl
 {
     public static function start()

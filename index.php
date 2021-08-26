@@ -1,7 +1,7 @@
 <?php
 
-require_once './Core/aControl.php';
-require_once './Core/aView.php';
-require_once './Core/account.php';
+use Aron\Core\aControl;
+
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
 aControl::start();
