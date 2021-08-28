@@ -1,13 +1,13 @@
-<form action='[%HomeUrl%]/index.php?cl=account&fnc=login' method='post'>
+<form action='index.php?cl=login&fnc=login' method='post'>
 <fieldset>
 <legend class='standardschrift'>Einloggen </legend>
 <table>
 <tr>
 <td>
-<label class='standardschrift'>Mailadresse</label></td><td> <input type='text' name='Mailadresse'/></td></tr>
+<label class='standardschrift'>Mailadresse</label></td><td> <input type='text' name='username'/></td></tr>
 <tr>
 <td>
-<label class='standardschrift'>Passwort</label></td><td><input type='password' name='Password'/></td></tr>
+<label class='standardschrift'>Passwort</label></td><td><input type='password' name='password'/></td></tr>
 <tr>
 <td>
 <input type='submit' name='formaction' value='OK' />
@@ -16,7 +16,3 @@
 </table>
 </fieldset>
 </form>
-
-
- 
-
