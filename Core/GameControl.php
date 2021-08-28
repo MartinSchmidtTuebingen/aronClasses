@@ -16,7 +16,8 @@ class GameControl
                 $actionClass = new $className();
 
                 if ($_GET['fnc'] !== null) {
-                    $actionClass->$_GET['fnc']();
+                    $functionName = $_GET['fnc'];
+                    $actionClass->$functionName();
                 }
                 $view = $actionClass;
             } else {
@@ -28,9 +29,12 @@ class GameControl
 
         catch (Exception $exception)
         {
-            echo "Exception!";
-            $log = fopen("./log/EXCEPTION_LOG.txt", "a");
-            fwrite($log, $exception->getMessage() . "\n");
+            echo "Exception!\n";
+            echo $exception->getMessage() . "\n\n";
+            echo $exception->getTraceAsString();
+            //$log = fopen("./log/EXCEPTION_LOG.txt", "a");
+            //fwrite($log, $exception->getMessage() . "\n");
+            //fclose($log);
         }
     }
 }
