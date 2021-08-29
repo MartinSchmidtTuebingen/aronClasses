@@ -1,4 +1,4 @@
-<form action='index.php?cl=login&fnc=login' method='post'>
+<form action='index.php?cl=account&fnc=login' method='post'>
 <fieldset>
 <legend class='standardschrift'>Einloggen </legend>
 <table>
