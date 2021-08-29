@@ -8,7 +8,6 @@ class Registry
 
     public static function get(string $className): object
     {
-        $className = 'Aron\Core\\' . $className;
         if (!isset(self::$instances[$className])) {
 
             self::$instances[$className] = new $className();
@@ -24,16 +23,16 @@ class Registry
 
     public static function getSession(): Session
     {
-        return self::get('Session');
+        return self::get(Session::class);
     }
 
     public static function getConfig(): Config
     {
-        return self::get('Config');
+        return self::get(Config::class);
     }
 
     public static function getRequest(): Request
     {
-        return self::get('Request');
+        return self::get(Request::class);
     }
 }
