@@ -4,7 +4,7 @@ namespace Aron\Core;
 
 class Request
 {
-    public function getParameter(string $parameterName)
+    public function getParameter(string $parameterName): ?string
     {
         if (isset($_POST[$parameterName])) {
             return $_POST[$parameterName];

@@ -9,9 +9,9 @@ class User
 {
     private $pepper = '69cd9406ce7ea11fecbafae9f7e9d44e';
 
-    public function checkPassword(string $userName, string $password)
+    public function checkPassword(?string $userName, ?string $password): bool
     {
-        if ($userName == '' || $password == '') {
+        if (is_null($userName) || is_null($password) || $userName == '' || $password == '') {
             return false;
         }
 
@@ -30,7 +30,7 @@ class User
         }
     }
 
-    private function getPasswordHash(string $userPassword, string $salt)
+    private function getPasswordHash(string $userPassword, string $salt): string
     {
         return md5($salt . $userPassword . $this->pepper);
     }

@@ -6,7 +6,7 @@ class Registry
 {
     private static $instances;
 
-    public static function get(string $className)
+    public static function get(string $className): object
     {
         $className = 'Aron\Core\\' . $className;
         if (!isset(self::$instances[$className])) {
@@ -17,7 +17,7 @@ class Registry
         return self::$instances[$className];
     }
 
-    public static function set(string $className, $classInstance)
+    public static function set(string $className, $classInstance): void
     {
         self::$instances[$className] = $classInstance;
     }
