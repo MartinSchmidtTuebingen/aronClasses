@@ -35,4 +35,9 @@ class Registry
     {
         return self::get(Request::class);
     }
+
+    public static function getUtils(): Utils
+    {
+        return self::get(Utils::class);
+    }
 }
