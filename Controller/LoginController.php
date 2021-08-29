@@ -3,6 +3,8 @@
 namespace Aron\Controller;
 
 use Aron\Model\User;
+use Aron\Core\Registry;
+use Aron\Core\Request;
 
 class LoginController extends FrontendController
 {
@@ -10,8 +12,9 @@ class LoginController extends FrontendController
 
     public function login()
     {
-        $userName = $_POST['username'];
-        $password = $_POST['password'];
+        $request = Registry::getRequest();
+        $userName = $request->getParameter('username');
+        $password = $request->getParameter('password');
         $user = new User();
 
         if ($user->checkPassword($userName, $password)) {
