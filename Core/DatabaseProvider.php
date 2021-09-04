@@ -19,7 +19,7 @@ class DatabaseProvider {
      /**
      * @return PDO
      */
-     public function getDb(): PDO
+     public static function getDb(): PDO
      {
          if (self::$dataBase === null) {
              $dsn = 'mysql:dbname=' . $_ENV['DB_NAME'] . ';host=' . $_ENV['DB_HOST'] ;
