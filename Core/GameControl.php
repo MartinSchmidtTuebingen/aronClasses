@@ -3,7 +3,6 @@
 namespace Aron\Core;
 
 use Aron\Controller\HomeController;
-use Aron\Core\Session;
 use Exception;
 
 class GameControl
@@ -20,7 +19,11 @@ class GameControl
 
                 if ($_GET['fnc'] !== null) {
                     $functionName = $_GET['fnc'];
-                    $actionClass->$functionName();
+                    $newAction = $actionClass->$functionName();
+
+                    if (is_string($newAction)) {
+                        Registry::getUtils()->redirect('index.php?cl=' . $newAction);
+                    }
                 }
                 $view = $actionClass;
             } else {
