@@ -31,13 +31,13 @@ class RegisterController extends FrontendController
         }
 
         $user = new User();
-        if ($user->registerUser($userName, $mailAdress, $password)) {
+        if ($user->createUser($userName, $mailAdress, $password)) {
             //Send activation mail
         } else {
             echo "Something went wrong in the registration";
         }
 
-        return 'account';
+//        return 'account';
     }
 
     private function validateUserName(?string $userName)

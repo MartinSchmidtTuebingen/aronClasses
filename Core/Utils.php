@@ -8,4 +8,9 @@ class Utils
     {
         header('Location: ' . $location);
     }
+
+    public function generateUId(): string
+    {
+        return md5(uniqid('', true) . '|' . microtime());
+    }
 }

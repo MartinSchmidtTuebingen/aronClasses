@@ -69,11 +69,23 @@ class User extends BaseModel
 
     public function getUserName(): string
     {
-        return $this->properties['usr_name'];
+        return $this->getValue('usr_name');
     }
 
-    public function registerUser(string $userName, string $mailAdress, string $password)
+    public function createUser(string $userName, string $mailAdress, string $password)
     {
+        $salt = uniqid();
 
+        $passwordHash = $this->getPasswordHash($password, $salt);
+
+        $this->properties = [
+            'usr_name' => $userName,
+            'usr_mail' => $mailAdress,
+            'usr_aktiv' => 0,
+            'usr_salt' => $salt,
+            'usr_pw' => $passwordHash,
+         ];
+
+        return $this->save();
     }
 }
