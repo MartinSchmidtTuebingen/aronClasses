@@ -3,6 +3,7 @@
 namespace Aron\Controller;
 
 use Aron\Core\Registry;
+use Aron\Model\User;
 
 class RegisterController extends FrontendController
 {
@@ -30,7 +31,7 @@ class RegisterController extends FrontendController
         }
 
         $user = new User();
-        if ($user->registerUser($userName, $mailAdress, $password) {
+        if ($user->registerUser($userName, $mailAdress, $password)) {
             //Send activation mail
         } else {
             echo "Something went wrong in the registration";
@@ -57,7 +58,7 @@ class RegisterController extends FrontendController
         return true;
     }
 
-    private function validateMailAdress($password, $passwordValidation)
+    private function validatePassword($password, $passwordValidation)
     {
         if ($password != $passwordValidation) {
             return false;

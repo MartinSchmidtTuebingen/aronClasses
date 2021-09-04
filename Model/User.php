@@ -3,7 +3,6 @@
 namespace Aron\Model;
 
 use Aron\Core\DatabaseProvider;
-use Aron\Model\BaseModel;
 use PDO;
 
 class User extends BaseModel
@@ -71,5 +70,10 @@ class User extends BaseModel
     public function getUserName(): string
     {
         return $this->properties['usr_name'];
+    }
+
+    public function registerUser(string $userName, string $mailAdress, string $password)
+    {
+
     }
 }
