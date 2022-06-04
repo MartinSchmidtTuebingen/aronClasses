@@ -24,10 +24,9 @@ class AccountController extends FrontendController
         $user->loadWithName($userName);
         if ($user->checkPassword($password, $userName)) {
             Registry::getSession()->setSessionVariable('userId', $user->getId());
-            Registry::getUtils()->redirect('index.php');
-        } else {
-            Registry::getUtils()->redirect('index.php');
         }
+            
+        Registry::getUtils()->redirect('index.php');
     }
 
     public function logout()
