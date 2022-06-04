@@ -26,6 +26,7 @@ class DatabaseProvider {
              $user = $_ENV['DB_USER'];
              $password = $_ENV['DB_PASSWORD'];
              self::$dataBase = new PDO($dsn, $user, $password);
+             self::$dataBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          }
          return self::$dataBase;
      }

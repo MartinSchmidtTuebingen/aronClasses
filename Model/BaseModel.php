@@ -79,8 +79,6 @@ abstract class BaseModel
 
         $selectString = "INSERT INTO $this->baseTable ($columNamesString) VALUES ($placeHoldersAsString)";
 
-        echo $selectString;
-
         $insertStatement = DatabaseProvider::getDb()->prepare($selectString);
         return $insertStatement->execute($properties);
     }
