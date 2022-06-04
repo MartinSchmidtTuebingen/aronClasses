@@ -2,3 +2,5 @@ vendor/
 composer.phar
 composer-setup.php
 .env
+.kdev4/
+src.kdev4
